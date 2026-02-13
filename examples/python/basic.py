@@ -17,14 +17,11 @@ def call_carddeckshuffler_api():
     Make a GET request to the Card Deck Shuffler API
     """
     try:
-        # Query parameters
-        params &#x3D; {&#x27;decks&#x27;: 1, &#x27;jokers&#x27;: false, &#x27;method&#x27;: &#x27;fisher-yates&#x27;}
-
         headers = {
             'x-api-key': API_KEY
         }
 
-        response = requests.get(API_URL, headers=headers, params=params)
+        response = requests.get(API_URL, headers=headers)
 
         # Raise exception for HTTP errors
         response.raise_for_status()
