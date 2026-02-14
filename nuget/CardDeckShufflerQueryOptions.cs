@@ -11,22 +11,19 @@ namespace APIVerve.API.CardDeckShuffler
     public class CardDeckShufflerQueryOptions
     {
         /// <summary>
-        /// Number of decks to shuffle (1-10, default: 1)
-        /// Example: 1
+        /// Number of decks to shuffle
         /// </summary>
         [JsonProperty("decks")]
         public string Decks { get; set; }
 
         /// <summary>
-        /// Include jokers in the deck (default: false)
-        /// Example: false
+        /// Include jokers in the deck
         /// </summary>
         [JsonProperty("jokers")]
         public string Jokers { get; set; }
 
         /// <summary>
-        /// Shuffling method: fisher-yates or riffle (default: fisher-yates)
-        /// Example: fisher-yates
+        /// Shuffling method
         /// </summary>
         [JsonProperty("method")]
         public string Method { get; set; }
