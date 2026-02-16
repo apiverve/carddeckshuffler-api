@@ -44,7 +44,11 @@ from apiverve_carddeckshuffler.apiClient import CarddeckshufflerAPIClient
 # Initialize the client with your APIVerve API key
 api = CarddeckshufflerAPIClient("[YOUR_API_KEY]")
 
-query = { "decks": 1, "jokers": , "method": "fisher-yates" }
+query = {
+    "decks": 1,
+    "jokers": ,
+    "method": "fisher-yates"
+}
 
 try:
     # Make the API call
@@ -82,7 +86,11 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "decks": 1, "jokers": , "method": "fisher-yates" }
+query = {
+    "decks": 1,
+    "jokers": ,
+    "method": "fisher-yates"
+}
 ```
 
 ###### Simple Request
@@ -481,7 +489,11 @@ from apiverve_carddeckshuffler.apiClient import CarddeckshufflerAPIClient, Cardd
 
 api = CarddeckshufflerAPIClient("[YOUR_API_KEY]")
 
-query = { "decks": 1, "jokers": , "method": "fisher-yates" }
+query = {
+    "decks": 1,
+    "jokers": ,
+    "method": "fisher-yates"
+}
 
 try:
     result = api.execute(query)
@@ -502,7 +514,11 @@ from apiverve_carddeckshuffler.apiClient import CarddeckshufflerAPIClient, Cardd
 
 api = CarddeckshufflerAPIClient("[YOUR_API_KEY]")
 
-query = { "decks": 1, "jokers": , "method": "fisher-yates" }
+query = {
+    "decks": 1,
+    "jokers": ,
+    "method": "fisher-yates"
+}
 
 try:
     result = api.execute(query)
@@ -536,7 +552,11 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_carddeckshuffler.apiClient import CarddeckshufflerAPIClient, CarddeckshufflerAPIClientError
 
-query = { "decks": 1, "jokers": , "method": "fisher-yates" }
+query = {
+    "decks": 1,
+    "jokers": ,
+    "method": "fisher-yates"
+}
 
 # Using context manager ensures proper cleanup
 with CarddeckshufflerAPIClient("[YOUR_API_KEY]") as api:
@@ -562,7 +582,11 @@ from apiverve_carddeckshuffler.apiClient import CarddeckshufflerAPIClient
 # Enable debug mode
 api = CarddeckshufflerAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "decks": 1, "jokers": , "method": "fisher-yates" }
+query = {
+    "decks": 1,
+    "jokers": ,
+    "method": "fisher-yates"
+}
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -577,8 +601,13 @@ from apiverve_carddeckshuffler.apiClient import CarddeckshufflerAPIClient
 
 api = CarddeckshufflerAPIClient("[YOUR_API_KEY]")
 
+query = {
+    "decks": 1,
+    "jokers": ,
+    "method": "fisher-yates"
+}
+
 try:
-    query = { "decks": 1, "jokers": , "method": "fisher-yates" }
     result = api.execute(query)
     print(result)
 finally:
