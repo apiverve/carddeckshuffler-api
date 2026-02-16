@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/carddeckshuffler",
-  "version": "1.1.13",
+  "version": "1.1.14",
   "description": "Card Deck Shuffler is a tool for shuffling standard playing card decks. It supports multiple decks, optional jokers, and different shuffling methods to generate randomized card sequences for games and simulations.",
   "main": "index.js",
   "types": "index.d.ts",
