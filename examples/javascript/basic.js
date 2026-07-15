@@ -13,7 +13,14 @@ const API_URL = 'https://api.apiverve.com/v1/carddeckshuffler';
  */
 async function callCardDeckShufflerAPI() {
   try {
-    const response = await fetch(API_URL, {
+    // Query parameters
+    const params &#x3D; new URLSearchParams({
+            decks: 1,
+            jokers: false,
+            method: &#x27;fisher-yates&#x27;
+        });
+
+    const response = await fetch(`${API_URL}?${params}`, {
       method: 'GET',
       headers: {
         'x-api-key': API_KEY
