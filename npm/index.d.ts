@@ -4,19 +4,31 @@ declare module '@apiverve/carddeckshuffler' {
     secure?: boolean;
   }
 
+  /**
+   * Describes fields the current plan does not unlock. Locked fields arrive as null
+   * in `data`; `locked_fields` names them, using dot paths for nested fields.
+   * Absent when the plan unlocks everything.
+   */
+  export interface PremiumInfo {
+    message: string;
+    upgrade_url: string;
+    locked_fields: string[];
+  }
+
   export interface carddeckshufflerResponse {
     status: string;
     error: string | null;
     data: CardDeckShufflerData;
     code?: number;
+    premium?: PremiumInfo;
   }
 
 
   interface CardDeckShufflerData {
-      totalCards:     number;
-      decksUsed:      number;
-      includesJokers: boolean;
-      shuffleMethod:  string;
+      totalCards:     number | null;
+      decksUsed:      number | null;
+      includesJokers: boolean | null;
+      shuffleMethod:  null | string;
       cards:          BottomCard[];
       topCard:        BottomCard;
       bottomCard:     BottomCard;
@@ -24,10 +36,10 @@ declare module '@apiverve/carddeckshuffler' {
   }
   
   interface BottomCard {
-      rank:  string;
-      suit:  Suit;
-      card:  string;
-      short: string;
+      rank:  null | string;
+      suit:  Suit | null;
+      card:  null | string;
+      short: null | string;
   }
   
   enum Suit {
