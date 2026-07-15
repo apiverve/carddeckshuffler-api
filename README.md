@@ -30,7 +30,13 @@ The Card Deck Shuffler API provides a simple, reliable way to integrate card dec
 ```javascript
 async function callCardDeckShufflerAPI() {
     try {
-        const response = await fetch('https://api.apiverve.com/v1/carddeckshuffler', {
+        const params = new URLSearchParams({
+            decks: 1,
+            jokers: false,
+            method: 'fisher-yates'
+        });
+
+        const response = await fetch(`https://api.apiverve.com/v1/carddeckshuffler?${params}`, {
             method: 'GET',
             headers: {
                 'x-api-key': 'YOUR_API_KEY_HERE'
@@ -50,7 +56,7 @@ callCardDeckShufflerAPI();
 ### Using cURL
 
 ```bash
-curl -X GET "https://api.apiverve.com/v1/carddeckshuffler?param=value" \
+curl -X GET "https://api.apiverve.com/v1/carddeckshuffler?decks=1&jokers=false&method=fisher-yates" \
   -H "x-api-key: YOUR_API_KEY_HERE"
 ```
 
@@ -150,7 +156,7 @@ go get github.com/apiverve/carddeckshuffler-api/go
 |---------|---------|
 | **Multi-language SDKs** | Native packages for JavaScript, Python, C#, Go, and Android |
 | **Simple Integration** | Single API key authentication, consistent response format |
-| **Production Ready** | 99.9% uptime, fast response times, used by thousands of developers |
+| **Production Ready** | 99.9% uptime SLA, served from 24 global regions |
 | **Comprehensive Docs** | Full examples, OpenAPI spec, and dedicated support |
 
 ---
@@ -169,7 +175,7 @@ go get github.com/apiverve/carddeckshuffler-api/go
 The Card Deck Shuffler API is commonly used for:
 
 - **Web Applications** - Add card deck shuffler features to your frontend or backend
-- **Mobile Apps** - Native SDKs for iOS and Android development
+- **Mobile Apps** - Native SDKs for Android development
 - **Automation** - Integrate with n8n, Zapier, or custom workflows
 - **SaaS Products** - Enhance your product with card deck shuffler capabilities
 - **Data Pipelines** - Process and analyze data at scale
