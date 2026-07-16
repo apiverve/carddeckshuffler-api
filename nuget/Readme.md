@@ -51,7 +51,7 @@ Here's a simple example to get you started quickly:
 
 ```csharp
 using System;
-using APIVerve;
+using APIVerve.API.CardDeckShuffler;
 
 class Program
 {
@@ -60,10 +60,10 @@ class Program
         // Initialize the API client
         var apiClient = new CardDeckShufflerAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    decks = 1,
-    jokers = ,
-    method = "fisher-yates"
+        var queryOptions = new CardDeckShufflerQueryOptions {
+    Decks = 1,
+    Jokers = ,
+    Method = "fisher-yates"
 };
 
         // Make the API call
@@ -118,7 +118,7 @@ The modern async/await pattern provides the best performance and code readabilit
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.CardDeckShuffler;
 
 public class Example
 {
@@ -126,10 +126,10 @@ public class Example
     {
         var apiClient = new CardDeckShufflerAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    decks = 1,
-    jokers = ,
-    method = "fisher-yates"
+        var queryOptions = new CardDeckShufflerQueryOptions {
+    Decks = 1,
+    Jokers = ,
+    Method = "fisher-yates"
 };
 
         var response = await apiClient.ExecuteAsync(queryOptions);
@@ -152,7 +152,7 @@ If you need to use synchronous code, you can use the `Execute` method:
 
 ```csharp
 using System;
-using APIVerve;
+using APIVerve.API.CardDeckShuffler;
 
 public class Example
 {
@@ -160,10 +160,10 @@ public class Example
     {
         var apiClient = new CardDeckShufflerAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    decks = 1,
-    jokers = ,
-    method = "fisher-yates"
+        var queryOptions = new CardDeckShufflerQueryOptions {
+    Decks = 1,
+    Jokers = ,
+    Method = "fisher-yates"
 };
 
         var response = apiClient.Execute(queryOptions);
@@ -191,7 +191,7 @@ The API client provides comprehensive error handling. Here are some examples:
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.CardDeckShuffler;
 
 public class Example
 {
@@ -199,10 +199,10 @@ public class Example
     {
         var apiClient = new CardDeckShufflerAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    decks = 1,
-    jokers = ,
-    method = "fisher-yates"
+        var queryOptions = new CardDeckShufflerQueryOptions {
+    Decks = 1,
+    Jokers = ,
+    Method = "fisher-yates"
 };
 
         try
@@ -245,7 +245,7 @@ public class Example
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.CardDeckShuffler;
 
 public class Example
 {
@@ -257,10 +257,10 @@ public class Example
         apiClient.SetMaxRetries(3);        // Retry up to 3 times (default: 0, max: 3)
         apiClient.SetRetryDelay(2000);     // Wait 2 seconds between retries
 
-        var queryOptions = new QueryOptions {
-    decks = 1,
-    jokers = ,
-    method = "fisher-yates"
+        var queryOptions = new CardDeckShufflerQueryOptions {
+    Decks = 1,
+    Jokers = ,
+    Method = "fisher-yates"
 };
 
         try
@@ -300,10 +300,10 @@ var apiClient = new CardDeckShufflerAPIClient("[YOUR_API_KEY]");
 apiClient.AddCustomHeader("X-Custom-Header", "custom-value");
 apiClient.AddCustomHeader("X-Request-ID", Guid.NewGuid().ToString());
 
-var queryOptions = new QueryOptions {
-    decks = 1,
-    jokers = ,
-    method = "fisher-yates"
+var queryOptions = new CardDeckShufflerQueryOptions {
+    Decks = 1,
+    Jokers = ,
+    Method = "fisher-yates"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -328,10 +328,10 @@ apiClient.SetLogger(message =>
     Console.WriteLine($"[LOG] {DateTime.Now:yyyy-MM-dd HH:mm:ss} - {message}");
 });
 
-var queryOptions = new QueryOptions {
-    decks = 1,
-    jokers = ,
-    method = "fisher-yates"
+var queryOptions = new CardDeckShufflerQueryOptions {
+    Decks = 1,
+    Jokers = ,
+    Method = "fisher-yates"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -348,10 +348,10 @@ var apiClient = new CardDeckShufflerAPIClient("[YOUR_API_KEY]");
 apiClient.SetMaxRetries(3);           // Retry up to 3 times (default: 0, max: 3)
 apiClient.SetRetryDelay(1500);        // Wait 1.5 seconds between retries (default: 1000ms)
 
-var queryOptions = new QueryOptions {
-    decks = 1,
-    jokers = ,
-    method = "fisher-yates"
+var queryOptions = new CardDeckShufflerQueryOptions {
+    Decks = 1,
+    Jokers = ,
+    Method = "fisher-yates"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -362,10 +362,10 @@ var response = await apiClient.ExecuteAsync(queryOptions);
 The API client implements `IDisposable` for proper resource cleanup:
 
 ```csharp
-var queryOptions = new QueryOptions {
-    decks = 1,
-    jokers = ,
-    method = "fisher-yates"
+var queryOptions = new CardDeckShufflerQueryOptions {
+    Decks = 1,
+    Jokers = ,
+    Method = "fisher-yates"
 };
 
 using (var apiClient = new CardDeckShufflerAPIClient("[YOUR_API_KEY]"))
@@ -391,106 +391,10 @@ using (var apiClient = new CardDeckShufflerAPIClient("[YOUR_API_KEY]"))
     "shuffle_method": "fisher-yates",
     "cards": [
       {
-        "rank": "3",
-        "suit": "Hearts",
-        "card": "3 of Hearts",
-        "short": "3♥"
-      },
-      {
-        "rank": "Ace",
-        "suit": "Hearts",
-        "card": "Ace of Hearts",
-        "short": "A♥"
-      },
-      {
-        "rank": "4",
-        "suit": "Hearts",
-        "card": "4 of Hearts",
-        "short": "4♥"
-      },
-      {
-        "rank": "Queen",
+        "rank": "8",
         "suit": "Spades",
-        "card": "Queen of Spades",
-        "short": "Q♠"
-      },
-      {
-        "rank": "4",
-        "suit": "Diamonds",
-        "card": "4 of Diamonds",
-        "short": "4♦"
-      },
-      {
-        "rank": "7",
-        "suit": "Hearts",
-        "card": "7 of Hearts",
-        "short": "7♥"
-      },
-      {
-        "rank": "9",
-        "suit": "Spades",
-        "card": "9 of Spades",
-        "short": "9♠"
-      },
-      {
-        "rank": "10",
-        "suit": "Hearts",
-        "card": "10 of Hearts",
-        "short": "10♥"
-      },
-      {
-        "rank": "4",
-        "suit": "Clubs",
-        "card": "4 of Clubs",
-        "short": "4♣"
-      },
-      {
-        "rank": "2",
-        "suit": "Diamonds",
-        "card": "2 of Diamonds",
-        "short": "2♦"
-      },
-      {
-        "rank": "2",
-        "suit": "Hearts",
-        "card": "2 of Hearts",
-        "short": "2♥"
-      },
-      {
-        "rank": "Ace",
-        "suit": "Diamonds",
-        "card": "Ace of Diamonds",
-        "short": "A♦"
-      },
-      {
-        "rank": "Ace",
-        "suit": "Spades",
-        "card": "Ace of Spades",
-        "short": "A♠"
-      },
-      {
-        "rank": "Queen",
-        "suit": "Clubs",
-        "card": "Queen of Clubs",
-        "short": "Q♣"
-      },
-      {
-        "rank": "Jack",
-        "suit": "Hearts",
-        "card": "Jack of Hearts",
-        "short": "J♥"
-      },
-      {
-        "rank": "Jack",
-        "suit": "Diamonds",
-        "card": "Jack of Diamonds",
-        "short": "J♦"
-      },
-      {
-        "rank": "4",
-        "suit": "Spades",
-        "card": "4 of Spades",
-        "short": "4♠"
+        "card": "8 of Spades",
+        "short": "8♠"
       },
       {
         "rank": "2",
@@ -499,34 +403,28 @@ using (var apiClient = new CardDeckShufflerAPIClient("[YOUR_API_KEY]"))
         "short": "2♠"
       },
       {
-        "rank": "King",
-        "suit": "Spades",
-        "card": "King of Spades",
-        "short": "K♠"
-      },
-      {
         "rank": "Queen",
         "suit": "Hearts",
         "card": "Queen of Hearts",
         "short": "Q♥"
       },
       {
-        "rank": "Jack",
-        "suit": "Spades",
-        "card": "Jack of Spades",
-        "short": "J♠"
-      },
-      {
-        "rank": "6",
+        "rank": "7",
         "suit": "Clubs",
-        "card": "6 of Clubs",
-        "short": "6♣"
+        "card": "7 of Clubs",
+        "short": "7♣"
       },
       {
-        "rank": "8",
+        "rank": "Queen",
+        "suit": "Spades",
+        "card": "Queen of Spades",
+        "short": "Q♠"
+      },
+      {
+        "rank": "King",
         "suit": "Hearts",
-        "card": "8 of Hearts",
-        "short": "8♥"
+        "card": "King of Hearts",
+        "short": "K♥"
       },
       {
         "rank": "6",
@@ -535,10 +433,178 @@ using (var apiClient = new CardDeckShufflerAPIClient("[YOUR_API_KEY]"))
         "short": "6♠"
       },
       {
-        "rank": "3",
+        "rank": "Queen",
+        "suit": "Diamonds",
+        "card": "Queen of Diamonds",
+        "short": "Q♦"
+      },
+      {
+        "rank": "King",
+        "suit": "Diamonds",
+        "card": "King of Diamonds",
+        "short": "K♦"
+      },
+      {
+        "rank": "4",
+        "suit": "Hearts",
+        "card": "4 of Hearts",
+        "short": "4♥"
+      },
+      {
+        "rank": "7",
+        "suit": "Hearts",
+        "card": "7 of Hearts",
+        "short": "7♥"
+      },
+      {
+        "rank": "8",
         "suit": "Clubs",
-        "card": "3 of Clubs",
-        "short": "3♣"
+        "card": "8 of Clubs",
+        "short": "8♣"
+      },
+      {
+        "rank": "4",
+        "suit": "Spades",
+        "card": "4 of Spades",
+        "short": "4♠"
+      },
+      {
+        "rank": "9",
+        "suit": "Hearts",
+        "card": "9 of Hearts",
+        "short": "9♥"
+      },
+      {
+        "rank": "Ace",
+        "suit": "Diamonds",
+        "card": "Ace of Diamonds",
+        "short": "A♦"
+      },
+      {
+        "rank": "Jack",
+        "suit": "Diamonds",
+        "card": "Jack of Diamonds",
+        "short": "J♦"
+      },
+      {
+        "rank": "Jack",
+        "suit": "Hearts",
+        "card": "Jack of Hearts",
+        "short": "J♥"
+      },
+      {
+        "rank": "2",
+        "suit": "Clubs",
+        "card": "2 of Clubs",
+        "short": "2♣"
+      },
+      {
+        "rank": "Jack",
+        "suit": "Clubs",
+        "card": "Jack of Clubs",
+        "short": "J♣"
+      },
+      {
+        "rank": "Queen",
+        "suit": "Clubs",
+        "card": "Queen of Clubs",
+        "short": "Q♣"
+      },
+      {
+        "rank": "9",
+        "suit": "Spades",
+        "card": "9 of Spades",
+        "short": "9♠"
+      },
+      {
+        "rank": "8",
+        "suit": "Diamonds",
+        "card": "8 of Diamonds",
+        "short": "8♦"
+      },
+      {
+        "rank": "10",
+        "suit": "Spades",
+        "card": "10 of Spades",
+        "short": "10♠"
+      },
+      {
+        "rank": "9",
+        "suit": "Clubs",
+        "card": "9 of Clubs",
+        "short": "9♣"
+      },
+      {
+        "rank": "4",
+        "suit": "Clubs",
+        "card": "4 of Clubs",
+        "short": "4♣"
+      },
+      {
+        "rank": "Ace",
+        "suit": "Clubs",
+        "card": "Ace of Clubs",
+        "short": "A♣"
+      },
+      {
+        "rank": "7",
+        "suit": "Diamonds",
+        "card": "7 of Diamonds",
+        "short": "7♦"
+      },
+      {
+        "rank": "7",
+        "suit": "Spades",
+        "card": "7 of Spades",
+        "short": "7♠"
+      },
+      {
+        "rank": "5",
+        "suit": "Diamonds",
+        "card": "5 of Diamonds",
+        "short": "5♦"
+      },
+      {
+        "rank": "10",
+        "suit": "Clubs",
+        "card": "10 of Clubs",
+        "short": "10♣"
+      },
+      {
+        "rank": "10",
+        "suit": "Diamonds",
+        "card": "10 of Diamonds",
+        "short": "10♦"
+      },
+      {
+        "rank": "6",
+        "suit": "Hearts",
+        "card": "6 of Hearts",
+        "short": "6♥"
+      },
+      {
+        "rank": "King",
+        "suit": "Spades",
+        "card": "King of Spades",
+        "short": "K♠"
+      },
+      {
+        "rank": "Jack",
+        "suit": "Spades",
+        "card": "Jack of Spades",
+        "short": "J♠"
+      },
+      {
+        "rank": "Ace",
+        "suit": "Hearts",
+        "card": "Ace of Hearts",
+        "short": "A♥"
+      },
+      {
+        "rank": "5",
+        "suit": "Hearts",
+        "card": "5 of Hearts",
+        "short": "5♥"
       },
       {
         "rank": "King",
@@ -548,39 +614,27 @@ using (var apiClient = new CardDeckShufflerAPIClient("[YOUR_API_KEY]"))
       },
       {
         "rank": "10",
-        "suit": "Spades",
-        "card": "10 of Spades",
-        "short": "10♠"
-      },
-      {
-        "rank": "6",
         "suit": "Hearts",
-        "card": "6 of Hearts",
-        "short": "6♥"
+        "card": "10 of Hearts",
+        "short": "10♥"
       },
       {
-        "rank": "7",
+        "rank": "2",
         "suit": "Diamonds",
-        "card": "7 of Diamonds",
-        "short": "7♦"
+        "card": "2 of Diamonds",
+        "short": "2♦"
       },
       {
         "rank": "Ace",
-        "suit": "Clubs",
-        "card": "Ace of Clubs",
-        "short": "A♣"
+        "suit": "Spades",
+        "card": "Ace of Spades",
+        "short": "A♠"
       },
       {
         "rank": "3",
-        "suit": "Spades",
-        "card": "3 of Spades",
-        "short": "3♠"
-      },
-      {
-        "rank": "King",
-        "suit": "Diamonds",
-        "card": "King of Diamonds",
-        "short": "K♦"
+        "suit": "Clubs",
+        "card": "3 of Clubs",
+        "short": "3♣"
       },
       {
         "rank": "5",
@@ -589,16 +643,40 @@ using (var apiClient = new CardDeckShufflerAPIClient("[YOUR_API_KEY]"))
         "short": "5♣"
       },
       {
-        "rank": "Jack",
-        "suit": "Clubs",
-        "card": "Jack of Clubs",
-        "short": "J♣"
+        "rank": "8",
+        "suit": "Hearts",
+        "card": "8 of Hearts",
+        "short": "8♥"
       },
       {
-        "rank": "8",
+        "rank": "3",
+        "suit": "Spades",
+        "card": "3 of Spades",
+        "short": "3♠"
+      },
+      {
+        "rank": "6",
+        "suit": "Clubs",
+        "card": "6 of Clubs",
+        "short": "6♣"
+      },
+      {
+        "rank": "4",
         "suit": "Diamonds",
-        "card": "8 of Diamonds",
-        "short": "8♦"
+        "card": "4 of Diamonds",
+        "short": "4♦"
+      },
+      {
+        "rank": "2",
+        "suit": "Hearts",
+        "card": "2 of Hearts",
+        "short": "2♥"
+      },
+      {
+        "rank": "3",
+        "suit": "Diamonds",
+        "card": "3 of Diamonds",
+        "short": "3♦"
       },
       {
         "rank": "9",
@@ -608,28 +686,36 @@ using (var apiClient = new CardDeckShufflerAPIClient("[YOUR_API_KEY]"))
       },
       {
         "rank": "5",
+        "suit": "Spades",
+        "card": "5 of Spades",
+        "short": "5♠"
+      },
+      {
+        "rank": "3",
         "suit": "Hearts",
-        "card": "5 of Hearts",
-        "short": "5♥"
-      },
-      {
-        "rank": "Queen",
-        "suit": "Diamonds",
-        "card": "Queen of Diamonds",
-        "short": "Q♦"
-      },
-      {
-        "rank": "8",
-        "suit": "Clubs",
-        "card": "8 of Clubs",
-        "short": "8♣"
+        "card": "3 of Hearts",
+        "short": "3♥"
       },
       {
         "rank": "6",
         "suit": "Diamonds",
         "card": "6 of Diamonds",
         "short": "6♦"
-      },
+      }
+    ],
+    "top_card": {
+      "rank": "8",
+      "suit": "Spades",
+      "card": "8 of Spades",
+      "short": "8♠"
+    },
+    "bottom_card": {
+      "rank": "6",
+      "suit": "Diamonds",
+      "card": "6 of Diamonds",
+      "short": "6♦"
+    },
+    "sample_hand": [
       {
         "rank": "8",
         "suit": "Spades",
@@ -637,22 +723,16 @@ using (var apiClient = new CardDeckShufflerAPIClient("[YOUR_API_KEY]"))
         "short": "8♠"
       },
       {
-        "rank": "5",
-        "suit": "Diamonds",
-        "card": "5 of Diamonds",
-        "short": "5♦"
-      },
-      {
-        "rank": "7",
+        "rank": "2",
         "suit": "Spades",
-        "card": "7 of Spades",
-        "short": "7♠"
+        "card": "2 of Spades",
+        "short": "2♠"
       },
       {
-        "rank": "King",
+        "rank": "Queen",
         "suit": "Hearts",
-        "card": "King of Hearts",
-        "short": "K♥"
+        "card": "Queen of Hearts",
+        "short": "Q♥"
       },
       {
         "rank": "7",
@@ -661,90 +741,10 @@ using (var apiClient = new CardDeckShufflerAPIClient("[YOUR_API_KEY]"))
         "short": "7♣"
       },
       {
-        "rank": "5",
-        "suit": "Spades",
-        "card": "5 of Spades",
-        "short": "5♠"
-      },
-      {
-        "rank": "3",
-        "suit": "Diamonds",
-        "card": "3 of Diamonds",
-        "short": "3♦"
-      },
-      {
-        "rank": "2",
-        "suit": "Clubs",
-        "card": "2 of Clubs",
-        "short": "2♣"
-      },
-      {
-        "rank": "10",
-        "suit": "Diamonds",
-        "card": "10 of Diamonds",
-        "short": "10♦"
-      },
-      {
-        "rank": "9",
-        "suit": "Clubs",
-        "card": "9 of Clubs",
-        "short": "9♣"
-      },
-      {
-        "rank": "10",
-        "suit": "Clubs",
-        "card": "10 of Clubs",
-        "short": "10♣"
-      },
-      {
-        "rank": "9",
-        "suit": "Hearts",
-        "card": "9 of Hearts",
-        "short": "9♥"
-      }
-    ],
-    "top_card": {
-      "rank": "3",
-      "suit": "Hearts",
-      "card": "3 of Hearts",
-      "short": "3♥"
-    },
-    "bottom_card": {
-      "rank": "9",
-      "suit": "Hearts",
-      "card": "9 of Hearts",
-      "short": "9♥"
-    },
-    "sample_hand": [
-      {
-        "rank": "3",
-        "suit": "Hearts",
-        "card": "3 of Hearts",
-        "short": "3♥"
-      },
-      {
-        "rank": "Ace",
-        "suit": "Hearts",
-        "card": "Ace of Hearts",
-        "short": "A♥"
-      },
-      {
-        "rank": "4",
-        "suit": "Hearts",
-        "card": "4 of Hearts",
-        "short": "4♥"
-      },
-      {
         "rank": "Queen",
         "suit": "Spades",
         "card": "Queen of Spades",
         "short": "Q♠"
-      },
-      {
-        "rank": "4",
-        "suit": "Diamonds",
-        "card": "4 of Diamonds",
-        "short": "4♦"
       }
     ]
   }
