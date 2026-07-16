@@ -25,18 +25,21 @@ namespace APIVerve.API.CardDeckShuffler
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
     {
         [JsonProperty("total_cards")]
-        public long TotalCards { get; set; }
+        public long? TotalCards { get; set; }
 
         [JsonProperty("decks_used")]
-        public long DecksUsed { get; set; }
+        public long? DecksUsed { get; set; }
 
         [JsonProperty("includes_jokers")]
-        public bool IncludesJokers { get; set; }
+        public bool? IncludesJokers { get; set; }
 
         [JsonProperty("shuffle_method")]
         public string ShuffleMethod { get; set; }
@@ -60,13 +63,25 @@ namespace APIVerve.API.CardDeckShuffler
         public RankUnion Rank { get; set; }
 
         [JsonProperty("suit")]
-        public Suit Suit { get; set; }
+        public Suit? Suit { get; set; }
 
         [JsonProperty("card")]
         public string Card { get; set; }
 
         [JsonProperty("short")]
         public string Short { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 
     public enum RankEnum { Ace, Jack, King, Queen };
@@ -80,5 +95,6 @@ namespace APIVerve.API.CardDeckShuffler
 
         public static implicit operator RankUnion(RankEnum Enum) => new RankUnion { Enum = Enum };
         public static implicit operator RankUnion(long Integer) => new RankUnion { Integer = Integer };
+        public bool IsNull => Integer == null && Enum == null;
     }
 }
