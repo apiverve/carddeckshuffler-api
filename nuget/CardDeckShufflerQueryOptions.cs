@@ -14,13 +14,13 @@ namespace APIVerve.API.CardDeckShuffler
         /// Number of decks to shuffle
         /// </summary>
         [JsonProperty("decks")]
-        public string Decks { get; set; }
+        public int? Decks { get; set; }
 
         /// <summary>
         /// Include jokers in the deck
         /// </summary>
         [JsonProperty("jokers")]
-        public string Jokers { get; set; }
+        public bool? Jokers { get; set; }
 
         /// <summary>
         /// Shuffling method
