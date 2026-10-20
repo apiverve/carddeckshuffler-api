@@ -2,9 +2,9 @@ openapi: 3.0.4
 info:
   title: Card Deck Shuffler
   description: >-
-    Card Deck Shuffler is a tool for shuffling standard playing card decks. It
-    supports multiple decks, optional jokers, and different shuffling methods to
-    generate randomized card sequences for games and simulations.
+    Card Deck Shuffler randomizes standard playing card decks using Fisher-Yates
+    or riffle algorithms. Pass the deck count and optional jokers to get the
+    full ordered cards with rank, suit, shorthand symbols, and the top card.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -19,7 +19,7 @@ servers:
 paths:
   /v1/carddeckshuffler:
     get:
-      summary: Shuffle Card Deck
+      summary: Card Deck Shuffler
       description: Shuffle one or more standard card decks with optional jokers
       operationId: carddeckshuffler
       parameters:
