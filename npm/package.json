@@ -1,7 +1,7 @@
 {
   "name": "@apiverve/carddeckshuffler",
-  "version": "1.2.0",
-  "description": "Card Deck Shuffler is a tool for shuffling standard playing card decks. It supports multiple decks, optional jokers, and different shuffling methods to generate randomized card sequences for games and simulations.",
+  "version": "1.2.2",
+  "description": "Card Deck Shuffler randomizes standard playing card decks using Fisher-Yates or riffle algorithms. Pass the deck count and optional jokers to get the full ordered cards with rank, suit, shorthand symbols, and the top card.",
   "main": "index.js",
   "types": "index.d.ts",
   "sideEffects": false,
@@ -23,7 +23,7 @@
     "directory": "npm"
   },
   "keywords": [
-    "card deck", "shuffle cards", "playing cards", "deck shuffle", "card game"
+    "deck of cards api", "card deck shuffler api", "shuffle cards api", "playing cards api", "card deck"
   ],
   "author": {
     "name": "APIVerve",
@@ -34,7 +34,7 @@
   "bugs": {
     "url": "https://github.com/apiverve/carddeckshuffler-api/issues"
   },
-  "homepage": "https://apiverve.com/marketplace/carddeckshuffler?utm_source=npm&utm_medium=homepage",
+  "homepage": "https://apiverve.com/marketplace/carddeckshuffler?utm_source=npm&utm_medium=referral&utm_content=homepage",
   "devDependencies": {
     "mocha": "^11.0.1",
     "chai": "^5.1.2",
