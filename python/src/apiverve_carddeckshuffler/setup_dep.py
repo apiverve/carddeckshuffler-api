@@ -2,17 +2,17 @@ from setuptools import setup, find_packages
 
 setup(
     name='apiverve_carddeckshuffler',
-    version='1.1.14',
+    version='1.2.2',
     packages=find_packages(),
     include_package_data=True,
     install_requires=[
         'requests',
         'setuptools'
     ],
-    description='Card Deck Shuffler is a tool for shuffling standard playing card decks. It supports multiple decks, optional jokers, and different shuffling methods to generate randomized card sequences for games and simulations.',
+    description='Card Deck Shuffler randomizes standard playing card decks using Fisher-Yates or riffle algorithms. Pass the deck count and optional jokers to get the full ordered cards with rank, suit, shorthand symbols, and the top card.',
     author='APIVerve',
     author_email='hello@apiverve.com',
-    url='https://apiverve.com/marketplace/carddeckshuffler?utm_source=pypi&utm_medium=homepage',
+    url='https://apiverve.com/marketplace/carddeckshuffler?utm_source=pypi&utm_medium=referral&utm_content=homepage',
     classifiers=[
         'Programming Language :: Python :: 3',
         'Operating System :: OS Independent',
