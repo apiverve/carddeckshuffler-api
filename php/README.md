@@ -1,6 +1,6 @@
 # Card Deck Shuffler API - PHP Package
 
-Card Deck Shuffler is a tool for shuffling standard playing card decks. It supports multiple decks, optional jokers, and different shuffling methods to generate randomized card sequences for games and simulations.
+Card Deck Shuffler randomizes standard playing card decks using Fisher-Yates or riffle algorithms. Pass the deck count and optional jokers to get the full ordered cards with rank, suit, shorthand symbols, and the top card.
 
 ## Installation
 
@@ -446,11 +446,11 @@ $client = new Client(
 
 ## Documentation
 
-For more information, visit the [API Documentation](https://docs.apiverve.com/ref/carddeckshuffler?utm_source=packagist&utm_medium=readme).
+For more information, visit the [API Documentation](https://docs.apiverve.com/ref/carddeckshuffler?utm_source=packagist&utm_medium=referral&utm_content=readme).
 
 ## Support
 
-- Website: [https://apiverve.com/marketplace/carddeckshuffler?utm_source=php&utm_medium=readme](https://apiverve.com/marketplace/carddeckshuffler?utm_source=php&utm_medium=readme)
+- Website: [https://apiverve.com/marketplace/carddeckshuffler?utm_source=php&utm_medium=referral&utm_content=readme](https://apiverve.com/marketplace/carddeckshuffler?utm_source=php&utm_medium=referral&utm_content=readme)
 - Email: hello@apiverve.com
 
 ## License
