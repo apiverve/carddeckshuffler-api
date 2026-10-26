@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/carddeckshuffler",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Card Deck Shuffler randomizes standard playing card decks using Fisher-Yates or riffle algorithms. Pass the deck count and optional jokers to get the full ordered cards with rank, suit, shorthand symbols, and the top card.",
   "main": "index.js",
   "types": "index.d.ts",
