@@ -46,7 +46,7 @@ final _formatPatterns = {
 
 /// Card Deck Shuffler API client.
 ///
-/// For more information, visit: https://apiverve.com/marketplace/carddeckshuffler?utm_source=dart&utm_medium=readme
+/// For more information, visit: https://apiverve.com/marketplace/carddeckshuffler?utm_source=dart&utm_medium=referral&utm_content=readme
 ///
 /// Parameters:
 /// * [decks] - Number of decks to shuffle [min: 1, max: 10]
