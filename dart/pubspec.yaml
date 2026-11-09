@@ -1,6 +1,6 @@
 name: apiverve_carddeckshuffler
 description: "Card Deck Shuffler randomizes standard playing card decks using Fisher-Yates or riffle algorithms. Pass the deck count and optional jokers to get the full ordered cards with rank, suit, shorthand symbols, and the top card."
-version: 1.2.4
+version: 1.2.5
 homepage: https://apiverve.com/marketplace/carddeckshuffler?utm_source=dart&utm_medium=referral&utm_content=homepage
 repository: https://github.com/apiverve/carddeckshuffler-api/tree/main/dart
 
